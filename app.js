@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
 const expressStaticGzip = require('express-static-gzip')
-const db = require('./db/connection')
+const mongoose = require('mongoose')
+// const db = require('./db/connection')
 
 
 var indexRouter = require('./routes/index');
@@ -14,7 +15,12 @@ var todoRouter = require('./routes/todo')
 
 var app = express();
 require('dotenv').config()
-db.connect()
+
+
+// db.connect()
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
+  console.log(error || "Connected to DB: true")
+})
 
 
 

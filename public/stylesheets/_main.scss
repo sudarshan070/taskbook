@@ -1,0 +1,126 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+$primary: #F2F5F6;
+$secondary: #2D4BCC;
+$bg: #dde1e8f1;
+$heading_color: #121212;
+$secondary_heading_color: #9f9f9f;
+
+
+body{
+    font-size: 16px;
+    line-height: 1.3;
+    color: rgb(3, 3, 3);
+    font-family: 'Poppins', sans-serif;
+    background:$bg;
+}
+
+a{
+    text-decoration: none;
+}
+
+.dashboard{
+    padding: 3rem;
+    height: 100vh;
+    .aside{
+        width: 20%;
+        background: $primary;
+        border-bottom-left-radius:2rem;
+        border-top-left-radius:2rem;
+        padding: 3rem 1rem;
+        img{
+            width: 120px;
+            margin: 0 auto;
+        }
+        .newTodo{
+            background: $secondary;
+            color: #fff;
+            font-size: 1.25rem;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    .main-section{
+        width: 80%;
+        background: #fff;
+        border-bottom-right-radius:2rem;
+        border-top-right-radius:2rem;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .createTodo{
+            h2{
+                font-size: 2.25rem;
+                font-weight: 300;
+                color: $heading_color;
+                font-style: italic;
+            }
+            p{
+                color: $secondary_heading_color;
+                font-weight: 300;
+                padding: .5rem 0;
+            }
+            span{
+                background: $secondary;
+                color: #fff;
+                padding: 0 .3rem;
+                border-radius: .25rem;
+            }
+        }
+        .form{
+          width: 50%;
+          margin: 0 auto;
+          margin-top: 4rem;
+         select, input{
+              margin-bottom: 1.25rem;
+          }
+          .submit-btn{
+              background: #2d4accd5;
+              color: $primary;
+              margin-bottom: 0;
+             &:hover{
+                 background: $secondary;
+                 color: #fff;
+             }
+          }
+        }
+        .card-body{
+            h5{
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+            p{
+                color: $secondary_heading_color;
+                font-weight: 300;
+                padding: .6rem 0;
+            }
+            .date{
+                font-size: .9rem;
+                color: #777;
+                font-weight: 300;
+            }
+            .red, .yellow, .green{
+                font-size: .8rem;
+                padding: .3rem .6rem;
+            }
+            .red{
+                background: red;
+                color: #fff;
+              
+            }
+            .yellow{
+                background: yellow;
+                color: #000;
+            }
+            .green{
+                background: green;
+                color: #fff;
+            }
+        }
+
+       
+    }
+}

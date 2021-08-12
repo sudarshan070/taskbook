@@ -42,12 +42,12 @@ if (process.env.NODE_ENV === "development") {
   app.use(require("webpack-hot-middleware")(compiler));
 }
 
-if(process.env.NODE_ENV=='production'){
-  app.get('/',(req,res)=>{
-      app.use(express.static(path.resolve(__dirname,'views','index.ejs')))
-      res.sendFile(path.join(__dirname, "dist/bundle"))
-  })
-}
+// if(process.env.NODE_ENV=='production'){
+//   app.get('/',(req,res)=>{
+//       app.use(express.static(path.resolve(__dirname,'views','index.ejs')))
+//       res.sendFile(path.join(__dirname, "dist/bundle"))
+//   })
+// }
 
 app.use(cors())
 app.use(logger('dev'));

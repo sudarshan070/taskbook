@@ -15,11 +15,11 @@ export default function Todo(props) {
       .catch((error) => setErr(error));
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     try {
       const todo = todos.filter((todo) => todo._id != id);
       setTodos(todo);
-      await axios.delete(`/api/todo/delete/${id}`);
+       axios.delete(`/api/todo/delete/${id}`);
     } catch (error) {
       Next(error);
     }
